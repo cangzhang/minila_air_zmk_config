@@ -18,9 +18,7 @@
 
    chosen {
      zmk,physical-layout = &m66_layout;
-/*
      zephyr,console = &cdc_acm_uart;
-*/
    };
 
    kscan_m66: kscan_m66 {
@@ -99,11 +97,9 @@ board_spi: &spi0 {
   };
 };
 
-/*
 &usbd {
     status = "okay";
     cdc_acm_uart: cdc_acm_uart {
         compatible = "zephyr,cdc-acm-uart";
     };
 };
-*/
