@@ -1,0 +1,124 @@
+# Copyright (c) 2022-2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_MLEGO_M66_REV4 || SHIELD_ST7735 || SHIELD_LS011B7DH03 || SHIELD_LS013B7DH03 || SHIELD_LS013B7DH05 || SHIELD_WEACT_EINK_154 || SHIELD_WEACT_EINK_213 || SHIELD_MLEGO_M66_REV4_RP2040
+
+config ZMK_KEYBOARD_NAME
+    default "mlegor4-60x168" if SHIELD_LS011B7DH03
+    default "mlegor4-128x128" if SHIELD_LS013B7DH03
+    default "mlegor4-144x168" if SHIELD_LS013B7DH05
+    default "mlegor4-eink154" if SHIELD_WEACT_EINK_154
+    default "mlegor4-eink213" if SHIELD_WEACT_EINK_213
+    default "mlegor4-rp2040" if SHIELD_MLEGO_M66_REV4_RP2040
+    default "mlegor4-st7735" if SHIELD_ST7735
+    default "mlego-m66-r4" 
+
+config SPI
+	default y
+
+config ZMK_DISPLAY
+	select LV_USE_CONT
+	select LV_FONT_MONTSERRAT_26
+
+if ZMK_DISPLAY
+
+config SYSTEM_WORKQUEUE_STACK_SIZE
+    default 2048
+
+config LV_Z_MEM_POOL_SIZE
+     default 4096
+
+choice LV_FONT_DEFAULT
+    default LV_FONT_DEFAULT_MONTSERRAT_26
+
+endchoice
+
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+
+
+config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
+    default 4096
+
+config ZMK_DISPLAY_DEDICATED_THREAD_PRIORITY
+    default 10
+
+choice ZMK_LV_FONT_DEFAULT_SMALL
+    default ZMK_LV_FONT_DEFAULT_SMALL_MONTSERRAT_26
+
+endchoice
+
+config LS0XX
+	default y if SHIELD_LS011B7DH03
+	default y if SHIELD_LS013B7DH03
+	default y if SHIELD_LS013B7DH05
+  default n
+
+config ST7735R
+  default y if SHIELD_ST7735
+  default n  
+
+config LV_Z_BITS_PER_PIXEL
+	default 1
+
+choice LV_COLOR_DEPTH
+	default LV_COLOR_DEPTH_1
+
+endchoice
+
+config LV_DPI_DEF
+	default 161 if SHIELD_WEACT_EINK_154
+	default 161 if SHIELD_WEACT_EINK_213
+	default 161 if SHIELD_LS011B7DH03
+  default 142 if SHIELD_LS013B7DH03
+  default 161 
+
+config LV_Z_VDB_SIZE
+	default 100
+
+config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+   imply MLEGO_WIDGET_STATUS
+
+config MLEGO_BONGO_CAT
+   bool "enable bongo cat on th widgt"
+   imply MLEGO_WIDGET_STATUS
+   select ZMK_WPM
+   select LVGL_USE_ANIMATION
+  
+config MLEGO_WIDGET_STATUS
+    bool "Custom mlego status widget"
+    select LV_FONT_MONTSERRAT_16
+    select LV_FONT_MONTSERRAT_14
+    select LV_FONT_MONTSERRAT_18
+    select LV_USE_IMG
+    select LV_USE_CANVAS
+
+config MLEGO_BONGO_CAT_IDLE_LIMIT
+    int "Upper limit for WPM for showing idle animation"
+    default 30
+
+config MLEGO_BONGO_CAT_SLOW_LIMIT
+    int "Upper limit for WPM for showing slow typing image"
+    default 60
+
+config DISP_WIDTH
+   int "width of the mip, sharp, memory display"
+   default 160
+
+config DISP_HEIGHT
+   int "height of the mip, sharp, memory display"
+   default 68
+
+config DISP_CANVAS
+   int "canvas size of the mip, sharp, memory display"
+   default 68
+
+config DISP_ROTATE
+   int "angle to rotate elements in screen mip, sharp, memory display in units of 0.1"
+   default 0
+
+
+endif # ZMK_DISPLAY
+
+endif # MLEGO_M66_REV4

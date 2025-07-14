@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2022-2023 alin m elena
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+   model = "onekey, rev1";
+
+   chosen {
+     zmk,kscan = &kscan;
+   };
+};
