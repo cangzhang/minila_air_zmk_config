@@ -1,7 +1,0 @@
-/*
- * Copyright (c) 2022-2024 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-#include "mlego_m66_rev4_keymap.dtsi" 
- 
