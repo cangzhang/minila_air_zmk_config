@@ -44,14 +44,14 @@
                  , <&shift_reg 14 (GPIO_ACTIVE_HIGH)>
                  , <&shift_reg 15 (GPIO_ACTIVE_HIGH)>
                  ;
-     row-gpios =   <&pro_micro 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.17
-                 , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.20
-                 , <&pro_micro 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.22
-                 , <&pro_micro 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.24
-                 , <&pro_micro 32 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.00
-                 , <&pro_micro 36 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.04
-                 , <&pro_micro 38 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.06
-                 , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.08
+     row-gpios =   <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.17
+                 , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.20
+                 , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.22
+                 , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.24
+                 , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.00
+                 , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.04
+                 , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.06
+                 , <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.08
                  ;
    };
 };
