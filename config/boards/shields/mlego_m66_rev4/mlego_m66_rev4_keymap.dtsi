@@ -48,29 +48,16 @@
     keymap {
         compatible = "zmk,keymap";
 
-/*
-┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
-│ ⎋  │ 1  │ 2  │ 3  │ 4  │ 5  │ 6  │ 7  │ 8  │ 9  │ 0  │ -  │ ⌫  │ 🕨  │
-├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┘
-│ ↹  │ q  │ w  │ e  │ r  │ t  │ y  │ u  │ i  │ o  │ p  │ [  │ ]  │
-├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
-│ #  │ a  │ s  │ d  │ f  │ g  │ h  │ j  │ k  │ l  │ ;  │ '  │ ⏎  │
-├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
-│ ⇧( │ \  │ z  │ x  │ c  │ v  │ b  │ n  │ m  │ ,  │ .  │ ↑  │ /  │
-├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
-│ ⎈  │   │ ⇓  │ ⎇  │ ⇑  │    │    │    │ ⎇  │ ⇧) │ ←  │ ↓  │ →  │
-└────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
-*/
         qw_layer {
             bindings = <
-                &kp Q &kp W &kp E &kp R &kp U &kp I &kp O &kp P &none &none &none &none &none &none &none &none
-                &kp TAB &kp CAPSLOCK &none &none &kp T &kp Y &kp RIGHT_BRACKET &kp LEFT_BRACKET &none &none &none &none &none &none &none &none
-                &kp A &kp S &kp D &kp F &kp J &kp K &kp L &none &none &none &none &none &none &none &none &none
-                &kp ESC &none &none &none &kp H &kp G &kp LEFT_ALT &kp ENTER &none &none &none &none &none &none &none &none
-                &kp Z &kp X &kp C &kp V &kp M &kp COMMA &kp DOT &kp RIGHT_ALT &none &none &none &none &none &none &none &none
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
+                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
+                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
+                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
+                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
+                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
+                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
+                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
             >;
         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
