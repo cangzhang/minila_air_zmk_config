@@ -82,7 +82,7 @@ board_spi: &spi0 {
   pinctrl-0 = <&spi0_default>;
   pinctrl-1 = <&spi0_sleep>;
   pinctrl-names = "default", "sleep";
-  cs-gpios = <&pro_micro 26 GPIO_ACTIVE_LOW> ;
+  cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW> ;
 
   shift_reg: 595@0 {
     compatible = "zmk,gpio-595";
