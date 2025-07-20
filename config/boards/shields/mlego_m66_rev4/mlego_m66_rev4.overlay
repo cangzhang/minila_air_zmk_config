@@ -23,7 +23,7 @@
 
    kscan_m66: kscan_m66 {
      compatible = "zmk,kscan-gpio-matrix";
-     diode-direction = "col2row";
+     diode-direction = "row2col";
      wakeup-source; 
      col-gpios =   <&shift_reg 15 (GPIO_ACTIVE_HIGH)>  // U5 QA -> C0
                  , <&shift_reg 6  (GPIO_ACTIVE_HIGH)>  // U5 QG -> C1
@@ -42,14 +42,14 @@
                  , <&shift_reg 9  (GPIO_ACTIVE_HIGH)>  // U4 QB -> C14
                  , <&shift_reg 10 (GPIO_ACTIVE_HIGH)>  // U4 QC -> C15
                  ;
-     row-gpios =   <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.17 -> R0
-                 , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.20 -> R1
-                 , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.22 -> R2
-                 , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.24 -> R3
-                 , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.00 -> R4
-                 , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.11 -> R5
-                 , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.04 -> R6
-                 , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.06 -> R7
+     row-gpios =   <&gpio0 17 (GPIO_ACTIVE_HIGH)>  // P0.17 -> R0
+                 , <&gpio0 20 (GPIO_ACTIVE_HIGH)>  // P0.20 -> R1
+                 , <&gpio0 22 (GPIO_ACTIVE_HIGH)>  // P0.22 -> R2
+                 , <&gpio0 24 (GPIO_ACTIVE_HIGH)>  // P0.24 -> R3
+                 , <&gpio1 0  (GPIO_ACTIVE_HIGH)>  // P1.00 -> R4
+                 , <&gpio0 11 (GPIO_ACTIVE_HIGH)>  // P0.11 -> R5
+                 , <&gpio1 4  (GPIO_ACTIVE_HIGH)>  // P1.04 -> R6
+                 , <&gpio1 6  (GPIO_ACTIVE_HIGH)>  // P1.06 -> R7
                  ;
    };
 };
