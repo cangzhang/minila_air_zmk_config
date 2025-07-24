@@ -17,16 +17,18 @@
    };
 
   kscan_m66: kscan_composite {
+    status = "okay";
     compatible = "zmk,kscan-composite";
     rows = <16>;
     columns = <8>;
 
     matrix {
-      kscan = <&kscan_mcp>;
+      kscan = <&kscan1>;
     };
   };
 
-  kscan_mcp: kscan_mcp {
+  kscan1: kscan_matrix {
+    status = "okay";
     compatible = "zmk,kscan-gpio-matrix";
     diode-direction = "row2col";
     row-gpios = <&mcp_io 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
