@@ -22,7 +22,7 @@
     columns = <8>;
 
     matrix {
-      kscan = <kscan_mcp>
+      kscan = <&kscan_mcp>
     }
   };
 
