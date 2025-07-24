@@ -53,9 +53,11 @@
       status = "okay";
       compatible = "nordic,nrf-twi";
       clock-frequency = <I2C_BITRATE_FAST>;
-      // pinctrl-0 = <&i2c0_default>;
-      // pinctrl-1 = <&i2c0_sleep>;
-      // pinctrl-names = "default", "sleep";
+      /* 
+      pinctrl-0 = <&i2c0_default>;
+      pinctrl-1 = <&i2c0_sleep>;
+      pinctrl-names = "default", "sleep";
+      */
 
       mcp23017: mcp23017@20 {
         label = "mcp23017";
