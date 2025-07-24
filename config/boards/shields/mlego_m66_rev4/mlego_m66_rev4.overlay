@@ -47,37 +47,52 @@
                 <&mcp_io 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
                 <&mcp_io 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
                 <&mcp_io 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    col-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    col-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
   };
 };
 
 /* MCP23017 I²C GPIO expander */
 &i2c0 {
-  status = "okay";
-  compatible = "nordic,nrf-twi";
-  clock-frequency = <I2C_BITRATE_FAST>;
-  /* 
-  pinctrl-0 = <&i2c0_default>;
-  pinctrl-1 = <&i2c0_sleep>;
-  pinctrl-names = "default", "sleep";
-  */
+	status = "okay";
+	compatible = "nordic,nrf-twi";
+	clock-frequency = <I2C_BITRATE_FAST>;
+	pinctrl-0 = <&i2c0_default>;
+	pinctrl-1 = <&i2c0_sleep>;
+	pinctrl-names = "default", "sleep";
 
-  mcp_io: mcp23017@20 {
-    compatible = "microchip,mcp230xx";
-    status = "okay";
-    reg = <0x20>;
-    gpio-controller;
-    #gpio-cells = <2>;
-    ngpios = <16>;
-    int-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;  // 对应原理图中 INTA -> P0.06
-  };
+	mcp_io: mcp23017@20 {
+		compatible = "microchip,mcp230xx";
+		status = "okay";
+		reg = <0x20>;
+		gpio-controller;
+		#gpio-cells = <2>;
+		ngpios = <16>;
+		int-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	};
+};
+
+&pinctrl {
+	i2c0_default: i2c0_default {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 29)>,
+				    <NRF_PSEL(TWIM_SCL, 0, 31)>;
+		};
+	};
+
+	i2c0_sleep: i2c0_sleep {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 29)>,
+				    <NRF_PSEL(TWIM_SCL, 0, 31)>;
+			low-power-enable;
+		};
+	};
 };
 
 /*
