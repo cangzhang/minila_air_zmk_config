@@ -48,7 +48,7 @@
                  ;
    };
 
-    // MCP23017 I²C GPIO expander
+    /* MCP23017 I²C GPIO expander */
     &i2c0 {
       status = "okay";
       compatible = "nordic,nrf-twi";
