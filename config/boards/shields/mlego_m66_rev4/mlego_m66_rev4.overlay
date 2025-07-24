@@ -16,7 +16,17 @@
      /* zephyr,console = &cdc_acm_uart; */
    };
 
-   kscan_m66: kscan_m66 {
+  kscan_m66: kscan0 {
+    compatible = "zmk,kscan-composite";
+    rows = <16>;
+    columns = <8>;
+
+    matrix: matrix {
+      kscan = <&matrix_kscan>;
+    };
+  };
+
+   matrix_kscan: kscan1 {
      compatible = "zmk,kscan-gpio-matrix";
      diode-direction = "row2col";
      wakeup-source; 
