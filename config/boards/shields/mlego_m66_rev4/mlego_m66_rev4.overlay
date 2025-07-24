@@ -23,7 +23,7 @@
 
     matrix {
       kscan = <&kscan_mcp>;
-    }
+    };
   };
 
   kscan_mcp: kscan_mcp {
