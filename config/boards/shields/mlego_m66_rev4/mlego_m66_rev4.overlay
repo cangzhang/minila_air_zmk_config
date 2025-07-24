@@ -18,45 +18,46 @@
 
   kscan_m66: kscan0 {
     compatible = "zmk,kscan-composite";
-    rows = <16>;
-    columns = <8>;
 
-    matrix: matrix {
-      kscan = <&matrix_kscan>;
-    };
+    kscan-local = <&kscan_local>;
+    kscan-mcp = <&kscan_mcp>;
   };
 
-   matrix_kscan: kscan1 {
-     compatible = "zmk,kscan-gpio-matrix";
-     diode-direction = "row2col";
-     wakeup-source; 
-     row-gpios =   <&mcp_io 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C0 -> GPA0
-                 , <&mcp_io 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C1 -> GPA1
-                 , <&mcp_io 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C2 -> GPA2
-                 , <&mcp_io 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C3 -> GPA3
-                 , <&mcp_io 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C4 -> GPA4
-                 , <&mcp_io 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C5 -> GPA5
-                 , <&mcp_io 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C6 -> GPA6
-                 , <&mcp_io 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C7 -> GPA7
-                 , <&mcp_io 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C8 -> GPB0
-                 , <&mcp_io 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>  // C9 -> GPB1
-                 , <&mcp_io 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)> // C10 -> GPB2
-                 , <&mcp_io 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)> // C11 -> GPB3
-                 , <&mcp_io 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)> // C12 -> GPB4
-                 , <&mcp_io 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)> // C13 -> GPB5
-                 , <&mcp_io 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)> // C14 -> GPB6
-                 , <&mcp_io 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)> // C15 -> GPB7
-                 ;
-     col-gpios =   <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.17 -> R0
-                 , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.20 -> R1
-                 , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.22 -> R2
-                 , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.24 -> R3
-                 , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.00 -> R4
-                 , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.11 -> R5
-                 , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.04 -> R6
-                 , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.06 -> R7
-                 ;
-   };
+  kscan_local: kscan_local {
+    compatible = "zmk,kscan-gpio-matrix";
+    diode-direction = "row2col";
+    row-gpios = <&gpio0 10 (GPIO_PULL_UP)>;
+    col-gpios = <&gpio0 28 (GPIO_PULL_DOWN)>;
+  };
+
+  kscan_mcp: kscan_mcp {
+    compatible = "zmk,kscan-gpio-matrix";
+    diode-direction = "row2col";
+    row-gpios = <&mcp_io 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&mcp_io 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    col-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+  };
 };
 
 /* MCP23017 I²C GPIO expander */
