@@ -16,9 +16,14 @@
      /* zephyr,console = &cdc_acm_uart; */
    };
 
-  kscan_m66: kscan0 {
+  kscan_m66: kscan_composite {
     compatible = "zmk,kscan-composite";
-    kscan-mcp = <&kscan_mcp>;
+    rows = <16>;
+    columns = <8>;
+
+    matrix {
+      kscan = <kscan_mcp>
+    }
   };
 
   kscan_mcp: kscan_mcp {
