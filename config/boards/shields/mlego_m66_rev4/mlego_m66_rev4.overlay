@@ -19,16 +19,18 @@
   kscan_m66: kscan0 {
     compatible = "zmk,kscan-composite";
 
-    kscan-local = <&kscan_local>;
+    // kscan-local = <&kscan_local>;
     kscan-mcp = <&kscan_mcp>;
   };
 
+/*
   kscan_local: kscan_local {
     compatible = "zmk,kscan-gpio-matrix";
     diode-direction = "row2col";
     row-gpios = <&gpio0 10 (GPIO_PULL_UP)>;
     col-gpios = <&gpio0 28 (GPIO_PULL_DOWN)>;
   };
+*/
 
   kscan_mcp: kscan_mcp {
     compatible = "zmk,kscan-gpio-matrix";
