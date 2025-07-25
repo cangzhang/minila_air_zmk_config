@@ -11,47 +11,27 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#define  QW 0
-
 / {
     keymap {
         compatible = "zmk,keymap";
-
         qw_layer {
             bindings = <
-                // 根据矩阵图正确排列: 每行8个按键 (16行x8列)
-                // Row 0 (R0): L_Control 在 C6
-                &none      &none      &none      &none      &none      &none      &kp LCTRL  &none
-                // Row 1 (R1): Q Tab A Esc Z \ 1
-                &kp Q      &kp TAB    &kp A      &kp ESC    &kp Z      &none      &kp BSLH   &kp N1
-                // Row 2 (R2): W Caps S X 2  
-                &kp W      &kp CAPS   &kp S      &none      &kp X      &none      &none      &kp N2
-                // Row 3 (R3): E D C 3
-                &kp E      &none      &kp D      &none      &kp C      &none      &none      &kp N3
-                // Row 4 (R4): R T F G V B 5 4
-                &kp R      &kp T      &kp F      &kp G      &kp V      &kp B      &kp N5     &kp N4
-                // Row 5 (R5): U Y J H M N 6 7
-                &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp N6     &kp N7
-                // Row 6 (R6): I ] K , +/= 8
-                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp EQUAL  &kp N8
-                // Row 7 (R7): O L . 9
-                &kp O      &none      &kp L      &none      &kp DOT    &none      &none      &kp N9
-                // Row 8 (R8): P [ ; ' / - 0
-                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp MINUS  &kp N0
-                // Row 9 (R9): R_Fn L_Fn L_Alt R_Alt
-                &none      &none      &none      &kp LALT   &none      &kp RALT   &none      &none
-                // Row 10 (R10): ` Backspace Enter ANY
-                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &none
-                // Row 11 (R11): Space Down
-                &none      &none      &none      &kp SPACE  &none      &kp DOWN   &none      &none
-                // Row 12 (R12): Right
-                &none      &none      &none      &none      &none      &kp RIGHT  &none      &none
-                // Row 13 (R13): Win App
-                &none      &kp LGUI   &none      &none      &none      &kp K_APP  &none      &none
-                // Row 14 (R14): UP Left
-                &none      &none      &none      &kp UP     &none      &kp LEFT   &none      &none
-                // Row 15 (R15): L_Shift R_Shift
-                &none      &kp LSHFT  &kp RSHFT  &none      &none      &none      &none      &none
+                // Row 0
+                &none      &none      &none      &none      &none      &none      &kp LCTRL  &none      &none      &none      &none      &none      &none      &none      &none      &none
+                // Row 1  
+                &kp Q      &kp TAB    &kp A      &kp ESC    &kp Z      &none      &kp BSLH   &kp N1     &none      &none      &none      &none      &none      &kp LGUI      &none      &none
+                // Row 2
+                &kp W      &kp CAPS   &kp S      &none      &kp X      &none      &none      &kp N2     &none      &none      &none      &none      &none      &none      &none      &none
+                // Row 3
+                &kp E      &none      &kp D      &none      &kp C      &none      &none      &kp N3     &none      &none      &none      &none      &none      &none      &none      &none
+                // Row 4
+                &kp R      &kp T      &kp F      &kp G      &kp V      &kp B      &kp N5     &kp N4     &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp N6     &kp N7
+                // Row 5
+                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp EQUAL  &kp N8     &kp O      &none      &kp L      &none      &kp DOT    &none      &none      &kp N9
+                // Row 6
+                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp MINUS  &kp N0     &none      &none      &none      &kp LALT   &none      &kp RALT   &none      &none
+                // Row 7
+                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &none      &none      &none      &none      &kp SPACE  &none      &kp DOWN   &kp RIGHT  &kp UP
             >;
         };
     };
