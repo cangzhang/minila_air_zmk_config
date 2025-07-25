@@ -4,6 +4,15 @@ alias ls='ls $LS_OPTIONS'
 Color_Off='\033[0m'       # Text Reset
 Green='\033[0;32m'        # Green
 
+# add your boards' functions here
+buildfm(){
+    base-build nice_nano_v2 mlego_m66_rev4
+}
+
+buildreset(){
+    base-build nice_nano_v2 settings_reset
+}
+
 # the first param is a board, the second is a shield
 base-build() ( # use a subshell
     set -e # to exit the subshell as soon as an error happens
@@ -21,3 +30,6 @@ base-build() ( # use a subshell
     cp build/zephyr/zmk.uf2 $FW_FILE # copy FW to the target folder
     echo -e "${Green}SUCCESSFULLY build $FW_FILE${Color_Off}"
 )
+
+buildfm
+buildreset
