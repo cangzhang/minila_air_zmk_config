@@ -32,4 +32,4 @@ base-build() ( # use a subshell
 )
 
 buildfm
-buildreset
+# buildreset
