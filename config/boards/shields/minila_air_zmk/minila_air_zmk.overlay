@@ -18,8 +18,8 @@
   kscan_m66: kscan_composite {
     status = "okay";
     compatible = "zmk,kscan-composite";
-    columns = <16>;
-    rows = <8>;
+    columns = <8>;
+    rows = <16>;
 
     matrix {
       kscan = <&kscan1>;
@@ -29,8 +29,8 @@
   kscan1: kscan_matrix {
     status = "okay";
     compatible = "zmk,kscan-gpio-matrix";
-    diode-direction = "col2row";
-    col-gpios = <&mcp_io 0 (GPIO_ACTIVE_HIGH)>,
+    diode-direction = "row2col";
+    row-gpios = <&mcp_io 0 (GPIO_ACTIVE_HIGH)>,
                 <&mcp_io 1 (GPIO_ACTIVE_HIGH)>,
                 <&mcp_io 2 (GPIO_ACTIVE_HIGH)>,
                 <&mcp_io 3 (GPIO_ACTIVE_HIGH)>,
@@ -46,7 +46,7 @@
                 <&mcp_io 13 (GPIO_ACTIVE_HIGH)>,
                 <&mcp_io 14 (GPIO_ACTIVE_HIGH)>,
                 <&mcp_io 15 (GPIO_ACTIVE_HIGH)>;
-    row-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+    col-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
@@ -54,10 +54,6 @@
                 <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-    /*
-    interrupt-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                      <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    */                  
   };
 };
 

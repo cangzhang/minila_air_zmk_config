@@ -17,21 +17,37 @@
         qw_layer {
             bindings = <
                 // Row 0
-                &none      &none      &none      &none      &none      &none      &kp LCTRL  &none      &none      &none      &none      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none      &kp LCTRL  &none
                 // Row 1  
-                &kp Q      &kp TAB    &kp A      &kp ESC    &kp Z      &none      &kp BSLH   &kp N1     &none      &none      &none      &none      &none      &kp LGUI      &none      &none
+                &kp Q      &kp TAB    &kp A      &kp ESC    &kp Z      &none      &kp BSLH   &kp N1
                 // Row 2
-                &kp W      &kp CAPS   &kp S      &none      &kp X      &none      &none      &kp N2     &none      &none      &none      &none      &none      &none      &none      &none
+                &kp W      &kp CAPS   &kp S      &none      &kp X      &none      &none      &kp N2
                 // Row 3
-                &kp E      &none      &kp D      &none      &kp C      &none      &none      &kp N3     &none      &none      &none      &none      &none      &none      &none      &none
+                &kp E      &none      &kp D      &none      &kp C      &none      &none      &kp N3
                 // Row 4
-                &kp R      &kp T      &kp F      &kp G      &kp V      &kp B      &kp N5     &kp N4     &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp N6     &kp N7
+                &kp R      &kp T      &kp F      &kp G      &kp V      &kp B      &kp N5     &kp N4
                 // Row 5
-                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp EQUAL  &kp N8     &kp O      &none      &kp L      &none      &kp DOT    &none      &none      &kp N9
+                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp EQUAL  &kp N8
                 // Row 6
-                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp MINUS  &kp N0     &none      &none      &none      &kp LALT   &none      &kp RALT   &none      &none
+                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp MINUS  &kp N0
                 // Row 7
-                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &none      &none      &none      &none      &kp SPACE  &none      &kp DOWN   &kp RIGHT  &kp UP
+                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &none
+                // Row 8
+                &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp N6     &kp N7
+                // Row 9
+                &kp O      &none      &kp L      &none      &kp DOT    &none      &none      &kp N9
+                // Row 10
+                &none      &none      &none      &kp LALT   &none      &kp RALT   &none      &none
+                // Row 11
+                &none      &none      &none      &kp SPACE  &none      &kp DOWN   &kp RIGHT  &kp UP
+                // Row 12
+                &none      &none      &none      &none      &none      &none      &none      &none
+                // Row 13
+                &none      &none      &none      &none      &none      &none      &none      &none
+                // Row 14
+                &none      &none      &none      &none      &none      &none      &none      &none
+                // Row 15
+                &none      &none      &none      &none      &none      &none      &none      &none
             >;
         };
     };
