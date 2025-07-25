@@ -1,27 +1,5 @@
 # Copyright (c) 2022-2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config  SHIELD_MLEGO_M66_REV4
+config  SHIELD_MINILA_AIR_ZMK
    def_bool $(shields_list_contains,mlego_m66_rev4)
-
-config  SHIELD_MLEGO_M66_REV4_RP2040
-   def_bool $(shields_list_contains,mlego_m66_rev4_rp2040)
-
-
-config  SHIELD_LS013B7DH03
-   def_bool $(shields_list_contains,ls013b7dh03_128x128)
-
-config  SHIELD_LS013B7DH05
-   def_bool $(shields_list_contains,ls013b7dh05)
-
-config  SHIELD_LS011B7DH03
-   def_bool $(shields_list_contains,ls011b7dh03)
-
-config  SHIELD_WEACT_EINK_154
-   def_bool $(shields_list_contains,weact_eink_154)
-
-config  SHIELD_WEACT_EINK_213
-   def_bool $(shields_list_contains,weact_eink_213)
-
-config  SHIELD_ST7735
-   def_bool $(shields_list_contains,st7735)
