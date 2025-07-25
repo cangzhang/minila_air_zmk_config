@@ -47,14 +47,145 @@
 
         qw_layer {
             bindings = <
-                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
-                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
-                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
-                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
-                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
-                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
-                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
-                &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q &kp Q
+                // 根据矩阵图正确排列: 每行8个按键 (16行x8列)
+                // Row 0 (R0): L_Control 在 C6
+                &none      &none      &none      &none      &none      &none      &kp LCTRL  &none
+                // Row 1 (R1): Q Tab A Esc Z \ 1
+                &kp Q      &kp TAB    &kp A      &kp ESC    &kp Z      &none      &kp BSLH   &kp N1
+                // Row 2 (R2): W Caps S X 2  
+                &kp W      &kp CAPS   &kp S      &none      &kp X      &none      &none      &kp N2
+                // Row 3 (R3): E D C 3
+                &kp E      &none      &kp D      &none      &kp C      &none      &none      &kp N3
+                // Row 4 (R4): R T F G V B 5 4
+                &kp R      &kp T      &kp F      &kp G      &kp V      &kp B      &kp N5     &kp N4
+                // Row 5 (R5): U Y J H M N 6 7
+                &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp N6     &kp N7
+                // Row 6 (R6): I ] K , +/= 8
+                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp EQUAL  &kp N8
+                // Row 7 (R7): O L . 9
+                &kp O      &none      &kp L      &none      &kp DOT    &none      &none      &kp N9
+                // Row 8 (R8): P [ ; ' / - 0
+                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp MINUS  &kp N0
+                // Row 9 (R9): R_Fn L_Fn L_Alt R_Alt
+                &trse      &none      &tlwr      &kp LALT   &none      &kp RALT   &none      &none
+                // Row 10 (R10): ` Backspace Enter ANY
+                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &none
+                // Row 11 (R11): Space Down
+                &none      &none      &none      &kp SPACE  &none      &kp DOWN   &none      &none
+                // Row 12 (R12): Right
+                &none      &none      &none      &none      &none      &kp RIGHT  &none      &none
+                // Row 13 (R13): Win App
+                &none      &kp LGUI   &none      &none      &none      &kp K_APP  &none      &none
+                // Row 14 (R14): UP Left
+                &none      &none      &none      &kp UP     &none      &kp LEFT   &none      &none
+                // Row 15 (R15): L_Shift R_Shift
+                &none      &kp LSHFT  &kp RSHFT  &none      &none      &none      &none      &none
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+                // 功能键层 - 对应16行x8列布局
+                // Row 0: 
+                &none      &none      &none      &none      &none      &none      &trans     &none
+                // Row 1: F1
+                &kp F1     &trans     &trans     &trans     &trans     &none      &kp PIPE   &kp F11
+                // Row 2: F2
+                &kp F2     &trans     &trans     &none      &trans     &none      &none      &kp F12
+                // Row 3: F3
+                &kp F3     &none      &trans     &none      &trans     &none      &none      &none
+                // Row 4: F4 F5 F6
+                &kp F4     &kp F5     &trans     &trans     &trans     &trans     &none      &none
+                // Row 5: F7 F8
+                &kp F7     &kp F6     &none      &trans     &trans     &trans     &none      &none
+                // Row 6: F8 ] +/=
+                &kp F8     &kp RBRC   &none      &none      &kp LT     &none      &kp PLUS   &none
+                // Row 7: F9
+                &kp F9     &none      &none      &none      &kp GT     &none      &none      &none
+                // Row 8: F10 [ : " ? _
+                &kp F10    &kp LBRC   &kp COLON  &kp DQT    &none      &kp QMARK  &kp UNDER  &none
+                // Row 9: 
+                &trans     &none      &trans     &trans     &none      &trans     &none      &none
+                // Row 10: ~ DEL
+                &kp TILDE  &kp DEL    &none      &trans     &none      &none      &trans     &none
+                // Row 11: 
+                &none      &none      &none      &trans     &none      &kp PG_DN  &none      &none
+                // Row 12: 
+                &none      &none      &none      &none      &none      &kp END    &none      &none
+                // Row 13: 
+                &none      &trans     &none      &none      &none      &trans     &none      &none
+                // Row 14: PG_UP HOME
+                &none      &none      &none      &kp PG_UP  &none      &kp HOME   &none      &none
+                // Row 15: 
+                &none      &trans     &trans     &none      &none      &none      &none      &none
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+                // 符号层 - 对应16行x8列布局
+                // Row 0: 
+                &none      &none      &none      &none      &none      &none      &trans     &none
+                // Row 1: ! @
+                &kp EXCL   &trans     &trans     &trans     &trans     &none      &kp PIPE   &none
+                // Row 2: @ #
+                &kp AT     &trans     &trans     &none      &trans     &none      &none      &none
+                // Row 3: # $
+                &kp HASH   &none      &trans     &none      &trans     &none      &none      &none
+                // Row 4: $ % ^
+                &kp DLLR   &kp PRCNT  &trans     &trans     &trans     &trans     &none      &none
+                // Row 5: & ^ *
+                &kp AMPS   &kp CARET  &none      &trans     &trans     &trans     &none      &none
+                // Row 6: * { <
+                &kp ASTRK  &kp LBRC   &none      &none      &kp LT     &none      &kp PLUS   &none
+                // Row 7: ( >
+                &kp LPAR   &none      &none      &none      &kp GT     &none      &none      &none
+                // Row 8: ) { : " ? _
+                &kp RPAR   &kp LBRC   &kp COLON  &kp DQT    &none      &kp QMARK  &kp UNDER  &none
+                // Row 9: 
+                &trans     &none      &trans     &trans     &none      &trans     &none      &none
+                // Row 10: ~ 
+                &kp TILDE  &trans     &none      &trans     &none      &none      &trans     &none
+                // Row 11: 
+                &none      &none      &none      &trans     &none      &trans     &none      &none
+                // Row 12: 
+                &none      &none      &none      &none      &none      &trans     &none      &none
+                // Row 13: 
+                &none      &trans     &none      &none      &none      &trans     &none      &none
+                // Row 14: 
+                &none      &none      &none      &trans     &none      &trans     &none      &none
+                // Row 15: 
+                &none      &trans     &trans     &none      &none      &none      &none      &none
+            >;
+        };
+
+        adjust_layer {
+            bindings = <
+                // 蓝牙和系统控制层 - 对应16行x8列布局
+                // Row 0: 
+                &none      &none      &none      &none      &none      &none      &none      &none
+                // Row 1: BT_CLR
+                &bt BT_CLR &none      &none      &none      &none      &none      &none      &none
+                // Row 2: BT_SEL 0
+                &bt BT_SEL 0 &none    &none      &none      &none      &none      &none      &none
+                // Row 3: BT_SEL 1
+                &bt BT_SEL 1 &none    &none      &none      &none      &none      &none      &none
+                // Row 4: BT_SEL 2
+                &bt BT_SEL 2 &none    &none      &none      &none      &none      &none      &none
+                // Row 5: BT_SEL 3
+                &bt BT_SEL 3 &none    &none      &none      &none      &none      &none      &none
+                // Row 6: BT_SEL 4
+                &bt BT_SEL 4 &none    &none      &none      &none      &none      &none      &none
+                // Row 7-15: 空
+                &none      &none      &none      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none      &none      &none
+                &trans     &none      &trans     &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none      &none      &none
+                &none      &none      &none      &none      &none      &none      &none      &none
             >;
         };
     };
