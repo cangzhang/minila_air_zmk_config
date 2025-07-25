@@ -10,9 +10,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
-#include "zmk-helpers/helper.h"
-#include "romanian.dtsi"
-#include "my_keys.dtsi"
 
 #define  QW 0
 #define RSE 1

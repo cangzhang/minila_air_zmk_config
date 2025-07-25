@@ -2,3 +2,4 @@
 .vscode/
 *.png
 job-logs.txt
+build/

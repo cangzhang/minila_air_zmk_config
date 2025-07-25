@@ -13,7 +13,7 @@ build_folder="mlego_m66_rev4"
 
 rm -rf "$build_folder"
 
-west build -d "$build_folder" -p always -b $board -S studio-rpc-usb-uart -- -DSHIELD="$shield" -DZMK_CONFIG=$zmk_config -DZMK_EXTRA_MODULES=$zmk_extra -DCONFIG_ZMK_STUDIO=y
+west build -d "$build_folder" -p always -b $board -- -DSHIELD="$shield" -DZMK_CONFIG=$zmk_config -DZMK_EXTRA_MODULES=$zmk_extra -DCONFIG_ZMK_STUDIO=y
 [[ -f "$build_folder/zephyr/zmk.uf2" ]] && cp "$build_folder/zephyr/zmk.uf2" "$l/$build_folder.uf2"
 
 while [ ! -d /run/media/drFaustroll/NICENANO/ ]; do
