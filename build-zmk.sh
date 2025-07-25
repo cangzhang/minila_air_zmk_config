@@ -6,7 +6,7 @@ Green='\033[0;32m'        # Green
 
 # add your boards' functions here
 buildfm(){
-    base-build nice_nano_v2 mlego_m66_rev4
+    base-build nice_nano_v2 minila_air_zmk
 }
 
 buildreset(){

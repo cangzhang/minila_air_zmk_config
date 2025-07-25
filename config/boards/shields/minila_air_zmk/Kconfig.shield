@@ -2,4 +2,4 @@
 # SPDX-License-Identifier: MIT
 
 config  SHIELD_MINILA_AIR_ZMK
-   def_bool $(shields_list_contains,mlego_m66_rev4)
+   def_bool $(shields_list_contains, minila_air_zmk)

@@ -1,13 +1,13 @@
-#include "mlego_m66_rev4_layout.dtsi"
+#include "minila_air_zmk_layout.dtsi"
 
 / {
-  model = "mlego m66, rev4";
+  model = "minila air zmk";
   //  compatible = "nice-nano-v2";
 
     m66_layout: m66_layout {
         compatible = "zmk,physical-layout";
-        display-name = "m66 default layout";
-        kscan = <&kscan_m66>;
+        display-name = "default layout";
+        kscan = <&kscan_layout>;
    };
 
    chosen {
@@ -15,7 +15,7 @@
      /* zephyr,console = &cdc_acm_uart; */
    };
 
-  kscan_m66: kscan_composite {
+  kscan_layout: kscan_composite {
     status = "okay";
     compatible = "zmk,kscan-composite";
     rows = <16>;

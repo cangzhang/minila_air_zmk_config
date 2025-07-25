@@ -9,4 +9,4 @@ config ZMK_KEYBOARD_NAME
 config SPI
 	default y
 
-endif # MLEGO_M66_REV4
+endif
