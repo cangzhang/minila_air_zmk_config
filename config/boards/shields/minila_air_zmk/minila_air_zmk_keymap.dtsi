@@ -16,75 +16,71 @@
         compatible = "zmk,keymap";
         qw_layer {
             bindings = <
-                // Row 0 (R0)
-                &none      &none      &none      &none      &none      &none      &kp LCTRL  &none
-                // Row 1 (R1)
-                &kp Q      &kp TAB    &kp A      &kp ESC    &kp Z      &none      &kp BSLH   &kp N1
-                // Row 2 (R2)
-                &kp W      &kp CAPS   &kp S      &none      &kp X      &none      &none      &kp N2
-                // Row 3 (R3)
-                &kp E      &none      &kp D      &none      &kp C      &none      &none      &kp N3
-                // Row 4 (R4)
+                // Row 1: Q Tab A Esc Z \ 1
+                &kp Q      &kp TAB    &kp A      &kp ESC    &kp Z      &kp BSLH   &kp N1
+                // Row 2: W Caps S X 2
+                &kp W      &kp CAPS   &kp S      &kp X      &kp N2
+                // Row 3: E D C 3
+                &kp E      &kp D      &kp C      &kp N3
+                // Row 4: R T F G V B 5 4
                 &kp R      &kp T      &kp F      &kp G      &kp V      &kp B      &kp N5     &kp N4
-                // Row 5 (R5)
+                // Row 5: U Y J H M N 6 7
                 &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp N6     &kp N7
-                // Row 6 (R6)
-                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp EQUAL  &kp N8
-                // Row 7 (R7)
-                &kp O      &none      &kp L      &none      &kp DOT    &none      &none      &kp N9
-                // Row 8 (R8)
-                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp MINUS  &kp N0
-                // Row 9 (R9)
-                &mo 1      &none      &mo 1      &kp LALT   &none      &kp RALT   &none      &none
-                // Row 10 (R10)
-                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &none
-                // Row 11 (R11)
-                &none      &none      &none      &kp SPACE  &none      &kp DOWN   &none      &none
-                // Row 12 (R12)
-                &none      &none      &none      &none      &none      &kp RIGHT  &none      &none
-                // Row 13 (R13)
-                &none      &kp LGUI   &none      &none      &none      &kp K_APP  &none      &none
-                // Row 14 (R14)
-                &none      &none      &none      &kp UP     &none      &kp LEFT   &none      &none
-                // Row 15 (R15)
-                &none      &kp LSHFT  &kp RSHFT  &none      &none      &none      &none      &none
+                // Row 6: I ] K , +/= 8
+                &kp I      &kp RBKT   &kp K      &kp COMMA  &kp EQUAL  &kp N8
+                // Row 7: O L . 9
+                &kp O      &kp L      &kp DOT    &kp N9
+                // Row 8: P [ ; ' / - 0
+                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &kp SLASH  &kp MINUS  &kp N0
+                // Row 9: R_Fn L_Fn L_Alt R_Alt
+                &mo 1      &mo 1      &kp LALT   &kp RALT
+                // Row 10: ` Backspace Enter Del
+                &kp GRAVE  &kp BSPC   &kp RET    &kp DEL
+                // Row 11: Space Down
+                &kp SPACE  &kp DOWN
+                // Row 12: Right
+                &kp RIGHT
+                // Row 13: Win App
+                &kp LGUI   &kp K_APP
+                // Row 14: UP none Left
+                &kp UP     &none      &kp LEFT
+                // Row 15: L_Shift R_Shift
+                &kp LSHFT  &kp RSHFT
             >;
         };
         
         fn_layer {
             bindings = <
-                // Row 0 (R0)
-                &none      &none      &none      &none      &none      &none      &none      &none
-                // Row 1 (R1)
-                &kp F1     &none      &none      &none      &none      &none      &none      &kp F1
-                // Row 2 (R2)
-                &kp F2     &none      &none      &none      &none      &none      &none      &kp F2
-                // Row 3 (R3)
-                &kp F3     &none      &none      &none      &none      &none      &none      &kp F3
-                // Row 4 (R4)
+                // Row 1: F1 none none none none none F1
+                &kp F1     &none      &none      &none      &none      &none      &kp F1
+                // Row 2: F2 none none none F2
+                &kp F2     &none      &none      &none      &kp F2
+                // Row 3: F3 none none F3
+                &kp F3     &none      &none      &kp F3
+                // Row 4: F4 none none none none none none F4
                 &kp F4     &none      &none      &none      &none      &none      &none      &kp F4
-                // Row 5 (R5)
+                // Row 5: F5 none none none none none none F5
                 &kp F5     &none      &none      &none      &none      &none      &none      &kp F5
-                // Row 6 (R6)
-                &kp F6     &none      &none      &none      &none      &none      &none      &kp F6
-                // Row 7 (R7)
-                &kp F7     &none      &none      &none      &none      &none      &none      &kp F7
-                // Row 8 (R8)
-                &kp F8     &none      &none      &none      &none      &none      &none      &kp F8
-                // Row 9 (R9)
-                &trans     &none      &trans     &none      &none      &none      &none      &none
-                // Row 10 (R10)
-                &kp F9     &kp DEL    &none      &none      &none      &none      &none      &none
-                // Row 11 (R11)
-                &none      &none      &none      &none      &none      &kp PG_DN  &none      &none
-                // Row 12 (R12)
-                &none      &none      &none      &none      &none      &kp END    &none      &none
-                // Row 13 (R13)
-                &none      &none      &none      &none      &none      &none      &none      &none
-                // Row 14 (R14)
-                &none      &none      &none      &kp PG_UP  &none      &kp HOME   &none      &none
-                // Row 15 (R15)
-                &none      &none      &none      &none      &none      &none      &none      &none
+                // Row 6: F6 none none none none F6
+                &kp F6     &none      &none      &none      &none      &kp F6
+                // Row 7: F7 none none F7
+                &kp F7     &none      &none      &kp F7
+                // Row 8: F8 none none none none none F8
+                &kp F8     &none      &none      &none      &none      &none      &kp F8
+                // Row 9: trans trans none none
+                &trans     &trans     &none      &none
+                // Row 10: F9 DEL none none
+                &kp F9     &kp DEL    &none      &none
+                // Row 11: none PG_DN
+                &none      &kp PG_DN
+                // Row 12: END
+                &kp END
+                // Row 13: none none
+                &none      &none
+                // Row 14: PG_UP none HOME
+                &kp PG_UP  &none      &kp HOME
+                // Row 15: none none
+                &none      &none
             >;
         };
     };
