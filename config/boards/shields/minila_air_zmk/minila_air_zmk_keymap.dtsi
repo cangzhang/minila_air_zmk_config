@@ -27,17 +27,17 @@
                 // Row 4
                 &kp R      &kp T      &kp F      &kp G      &kp V      &kp B      &kp N5     &kp N4
                 // Row 5
-                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp EQUAL  &kp N8
+                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp N6     &kp N7
                 // Row 6
-                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp MINUS  &kp N0
+                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp EQUAL  &kp N8
                 // Row 7
-                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &none
+                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &kp N9
                 // Row 8
-                &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp N6     &kp N7
+                &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp MINUS  &kp N0
                 // Row 9
                 &kp O      &none      &kp L      &none      &kp DOT    &none      &none      &kp N9
                 // Row 10
-                &none      &none      &none      &kp LALT   &none      &kp RALT   &none      &none
+                &none      &kp BACKSPACE      &none      &kp LALT   &none      &kp RALT   &none      &kp QUESTION
                 // Row 11
                 &none      &none      &none      &kp SPACE  &none      &kp DOWN   &kp RIGHT  &kp UP
                 // Row 12
