@@ -16,37 +16,74 @@
         compatible = "zmk,keymap";
         qw_layer {
             bindings = <
-                // Row 0
+                // Row 0 (R0)
                 &none      &none      &none      &none      &none      &none      &kp LCTRL  &none
-                // Row 1  
+                // Row 1 (R1)
                 &kp Q      &kp TAB    &kp A      &kp ESC    &kp Z      &none      &kp BSLH   &kp N1
-                // Row 2
+                // Row 2 (R2)
                 &kp W      &kp CAPS   &kp S      &none      &kp X      &none      &none      &kp N2
-                // Row 3
+                // Row 3 (R3)
                 &kp E      &none      &kp D      &none      &kp C      &none      &none      &kp N3
-                // Row 4
+                // Row 4 (R4)
                 &kp R      &kp T      &kp F      &kp G      &kp V      &kp B      &kp N5     &kp N4
-                // Row 5
-                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp N6     &kp N7
-                // Row 6
-                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp EQUAL  &kp N8
-                // Row 7
-                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &kp N9
-                // Row 8
-                &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp MINUS  &kp N0
-                // Row 9
+                // Row 5 (R5)
+                &kp U      &kp Y      &kp J      &kp H      &kp M      &kp N      &kp N6     &kp N7
+                // Row 6 (R6)
+                &kp I      &kp RBKT   &kp K      &none      &kp COMMA  &none      &kp EQUAL  &kp N8
+                // Row 7 (R7)
                 &kp O      &none      &kp L      &none      &kp DOT    &none      &none      &kp N9
-                // Row 10
-                &none      &kp BACKSPACE      &none      &kp LALT   &none      &kp RALT   &none      &kp QUESTION
-                // Row 11
-                &none      &none      &none      &kp SPACE  &none      &kp DOWN   &kp RIGHT  &kp UP
-                // Row 12
+                // Row 8 (R8)
+                &kp P      &kp LBKT   &kp SEMI   &kp SQT    &none      &kp SLASH  &kp MINUS  &kp N0
+                // Row 9 (R9)
+                &mo 1      &none      &mo 1      &kp LALT   &none      &kp RALT   &none      &none
+                // Row 10 (R10)
+                &kp GRAVE  &kp BSPC   &none      &kp RET    &none      &none      &none      &none
+                // Row 11 (R11)
+                &none      &none      &none      &kp SPACE  &none      &kp DOWN   &none      &none
+                // Row 12 (R12)
+                &none      &none      &none      &none      &none      &kp RIGHT  &none      &none
+                // Row 13 (R13)
+                &none      &kp LGUI   &none      &none      &none      &kp K_APP  &none      &none
+                // Row 14 (R14)
+                &none      &none      &none      &kp UP     &none      &kp LEFT   &none      &none
+                // Row 15 (R15)
+                &none      &kp LSHFT  &kp RSHFT  &none      &none      &none      &none      &none
+            >;
+        };
+        
+        fn_layer {
+            bindings = <
+                // Row 0 (R0)
                 &none      &none      &none      &none      &none      &none      &none      &none
-                // Row 13
+                // Row 1 (R1)
+                &kp F1     &none      &none      &none      &none      &none      &none      &kp F1
+                // Row 2 (R2)
+                &kp F2     &none      &none      &none      &none      &none      &none      &kp F2
+                // Row 3 (R3)
+                &kp F3     &none      &none      &none      &none      &none      &none      &kp F3
+                // Row 4 (R4)
+                &kp F4     &none      &none      &none      &none      &none      &none      &kp F4
+                // Row 5 (R5)
+                &kp F5     &none      &none      &none      &none      &none      &none      &kp F5
+                // Row 6 (R6)
+                &kp F6     &none      &none      &none      &none      &none      &none      &kp F6
+                // Row 7 (R7)
+                &kp F7     &none      &none      &none      &none      &none      &none      &kp F7
+                // Row 8 (R8)
+                &kp F8     &none      &none      &none      &none      &none      &none      &kp F8
+                // Row 9 (R9)
+                &trans     &none      &trans     &none      &none      &none      &none      &none
+                // Row 10 (R10)
+                &kp F9     &kp DEL    &none      &none      &none      &none      &none      &none
+                // Row 11 (R11)
+                &none      &none      &none      &none      &none      &kp PG_DN  &none      &none
+                // Row 12 (R12)
+                &none      &none      &none      &none      &none      &kp END    &none      &none
+                // Row 13 (R13)
                 &none      &none      &none      &none      &none      &none      &none      &none
-                // Row 14
-                &none      &none      &none      &none      &none      &none      &none      &none
-                // Row 15
+                // Row 14 (R14)
+                &none      &none      &none      &kp PG_UP  &none      &kp HOME   &none      &none
+                // Row 15 (R15)
                 &none      &none      &none      &none      &none      &none      &none      &none
             >;
         };
