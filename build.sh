@@ -31,5 +31,7 @@ base-build() ( # use a subshell
     echo -e "${Green}SUCCESSFULLY build $FW_FILE${Color_Off}"
 )
 
+# build the boards, exit if an error occurs
+set -e
 buildfm
-# buildreset
+buildreset

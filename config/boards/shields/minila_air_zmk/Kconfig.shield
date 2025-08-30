@@ -1,5 +1,5 @@
 # Copyright (c) 2022-2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config  SHIELD_MINILA_AIR_ZMK
-   def_bool $(shields_list_contains, minila_air_zmk)
+config SHIELD_MINILA_AIR_ZMK
+   def_bool $(shields_list_contains,minila_air_zmk)

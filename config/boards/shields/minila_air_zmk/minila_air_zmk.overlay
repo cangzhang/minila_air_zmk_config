@@ -55,6 +55,13 @@
                 <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                 <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
   };
+
+  ext-power {
+		compatible = "zmk,ext-power-generic";
+		label = "EXT_POWER";
+		init-delay-ms = <50>;
+		control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+	};
 };
 
 /* MCP23017 I²C GPIO expander */
