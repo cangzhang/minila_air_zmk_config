@@ -1,4 +1,5 @@
 #include "minila_air_zmk_layout.dtsi"
+#include <dt-bindings/zmk/ext_power.h>
 
 / {
   model = "mlego m66, rev4";
@@ -62,6 +63,12 @@
 		init-delay-ms = <50>;
 		control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
 	};
+
+  boot: boot {
+    compatible = "zmk,behavior-binding";
+    label = "BOOT";
+    bindings = <&ext_power EP_ON>;
+  };
 };
 
 /* MCP23017 I²C GPIO expander */
